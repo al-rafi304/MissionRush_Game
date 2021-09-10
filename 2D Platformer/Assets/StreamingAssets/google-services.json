@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "297106002916",
+    "firebase_url": "https://missionrush-4dcdf-default-rtdb.firebaseio.com",
+    "project_id": "missionrush-4dcdf",
+    "storage_bucket": "missionrush-4dcdf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297106002916:android:cf149f3a88cc1a3c8a6df1",
+        "android_client_info": {
+          "package_name": "com.OutsideTheBox.MissionRush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297106002916-4tc1h58hd3eg2fakjqtuch7vplvhcmve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKvx4DIRLUZHW95dwZQpM4pxGiHRLtB84"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297106002916-4tc1h58hd3eg2fakjqtuch7vplvhcmve.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

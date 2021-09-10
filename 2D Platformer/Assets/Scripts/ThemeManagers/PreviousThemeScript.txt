@@ -1,0 +1,79 @@
+public enum ThemeName
+    {
+        Light,
+        Dark
+    };
+    public ThemeName themeSelector;
+    private ThemeActivator[] selectedObjectList;
+    public Themes[] themesList;
+
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(themeSelector == ThemeName.Light)
+        {
+            ChangeTheme(0);
+        }
+        else
+        {
+            ChangeTheme(1);
+        }
+        
+        
+    }
+
+    public void ChangeTheme(int themeID)
+    {
+        selectedObjectList = FindObjectsOfType<ThemeActivator>();
+        
+        // foreach(var themeItem in themesList){
+        //     if(!themeItem.hasOutline)
+        //     {
+        //         foreach(var sItem in selectedObjectList){
+        //             sItem.gameObject.SetActive(false);
+        //         }
+        //     }
+        //     else{
+        //         foreach(var sItem in selectedObjectList){
+        //             sItem.gameObject.SetActive(true);
+        //         }
+        //     }
+        // }
+
+        foreach (var theme in themesList[themeID].themeColors)
+        {
+            foreach (var selectedItem in selectedObjectList)
+            {
+                if(selectedItem.tag == theme.itemTag && theme.itemTag != "MainCamera"){
+                    selectedItem.GetComponent<SpriteRenderer>().color = theme.itemColor;
+                }
+                else if(selectedItem.tag == "MainCamera" && selectedItem.tag == theme.itemTag){
+                    selectedItem.GetComponent<Camera>().backgroundColor = theme.itemColor;
+                }
+            }
+        }
+        
+    }
+}
+
+[System.Serializable]
+public class ThemeColors
+{
+    public string itemName;
+    public Color itemColor;
+    public string itemTag;
+    
+}
+
+[System.Serializable]
+public class Themes
+{
+    public string themeName;
+    public bool hasOutline;
+    public ThemeColors[] themeColors;
+}
